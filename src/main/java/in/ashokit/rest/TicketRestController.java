@@ -21,13 +21,13 @@ public class TicketRestController {
 	private TicketService service;
 	
      @PostMapping("/ticket")
-	public ResponseEntity<Ticket> bookTicket(@RequestBody Passenger p){
+	public ResponseEntity<Ticket> bookTickets(@RequestBody Passenger p){
 		Ticket ticket = service.bookTicket(p);
 		return new ResponseEntity<>(ticket,HttpStatus.CREATED);
 	}
      
-     @GetMapping("/ticketss")
-     public ResponseEntity<Collection<Ticket>>getTickets(){
+     @GetMapping("/tickets")
+     public ResponseEntity<Collection<Ticket>>getTicketss(){
     	 Collection<Ticket> allTickets = service.getAllTickets();
     	 return new ResponseEntity<>(allTickets,HttpStatus.OK);
      }
